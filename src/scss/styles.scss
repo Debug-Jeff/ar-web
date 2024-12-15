@@ -1,16 +1,6 @@
 // Import all of Bootstrap's CSS
 @import "bootstrap/scss/bootstrap";
 
-
-
-body {
-    background-image: url('/src/assets/pic1.jpeg'); 
-    background-size: cover;   /* Cover the entire area */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent image repetition */
-    height: 100vh; /* Full viewport height */
-}
-
 @media(min-width: 768px) {
     .news-input {
         width: 50%;
