@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novus Reb Engineering Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/src/assets/NR-Logo-removebg-preview.png" type="image/x-icon">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(/src/assets/bg-image6.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: repeat;
+        }
+
+        #Container-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            /* or any specific width */
+            max-width: 1200px;
+            /* optional: prevents container from getting too wide */
+            margin: 20px auto;
+        }
+
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .nav-link:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-link:hover {
+            color: rgb(9, 48, 244);
+        }
+
+        .nav-link.active {
+            color: rgb(63, 63, 63);
+        }
+    </style>
+</head>
+
+<body>
+    <!--Nav bar-->
+    <nav class="navbar navbar-expand-lg bg-transparent navbar-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="/src/assets/logo-removebg-preview.svg" style="width: 50%; margin-left: 20%;" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link text-light fw-bold" href="/src/index.html">HOME</a>
+                    <a class="nav-link text-light fw-bold" href="/src/pages/about.html">ABOUT US</a>
+                    <a class="nav-link text-light fw-bold" href="/src/pages/services.html">SERVICES</a>
+                    <a class="nav-link text-light fw-bold" href="/src/pages/projects.html">OUR PROJECTS</a>
+                    <a class="nav-link text-light fw-bold active" aria-current="page" href="#">CONTACT US</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="Container-div">
+        <h1>Contact Us</h1>
+        <p>For any inquiries, please contact us at:</p>
+        <p>Email:
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
