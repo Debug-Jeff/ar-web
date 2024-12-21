@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novus Reb Engineering Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/NR-Logo-removebg-preview.png" type="image/x-icon">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: url(assets/bg-image2.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: repeat;
+        }
+
+        #Container-div {
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .border-wrapper {
+            position: relative;
+            padding: 3rem 2rem;
+        }
+
+        /* Top border with interruption for the logo */
+        .border-wrapper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: calc(50% - 50px);
+            /* Leave space for the logo */
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .border-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: calc(50% - 50px);
+            /* Leave space for the logo */
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        /* Bottom border with interruption for the button */
+        .border-wrapper .bottom-border-left {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: calc(50% - 25px);
+            /* Leave space for the button */
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        .border-wrapper .bottom-border-right {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: calc(50% - 25px);
+            /* Leave space for the button */
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+        }
+
+        /* Left and right borders */
+        .border-wrapper .left-border,
+        .border-wrapper .right-border {
+            position: absolute;
+            width: 2px;
+            background-color: rgb(255, 255, 255);
+            width: 4px;
+            height: 100%;
+            /* Full height to touch top and bottom borders */
+        }
+
+        .border-wrapper .left-border {
+            top: 0;
+            left: 0;
+        }
+
+        .border-wrapper .right-border {
+            top: 0;
+            right: 0;
+        }
+
+        /* Logo styling */
+        .logo {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Button styling */
+        .button-container {
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            z-index: 1;
+        }
+
+        h1{
+            color: white;
+        }
+        
+        p{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Nav bar-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/logo-removebg-preview.svg" style="width: 50%; margin-left: 20%;" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link fw-bold active" aria-current="page" href="#">HOME</a>
+                    <a class="nav-link fw-bold" href="#">ABOUT US</a>
+                    <a class="nav-link fw-bold" href="#">SERVICES</a>
+                    <a class="nav-link fw-bold" href="#">OUR PROJECTS</a>
+                    <a class="nav-link fw-bold" href="#">CONTACT US</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="Container-div" class="border-wrapper position-relative px-4">
+        <!-- Top Logo -->
+        <div class="logo position-absolute bg-transparent px-3">
+            <img src="assets/NR-Logo-removebg-preview.png" alt="Logo" style="height: 50px;">
+        </div>
+
+        <!-- Hero Section -->
+        <h1 class="hero-title px-5 text-center">Novus Reb Engineering Solutions</h1>
+        <p class="hero-text px-5 text-center">We're a civil engineering firm that caters to real estate developers</p>
+        <!-- Bottom Button -->
+        <div class="button-container position-absolute bg-transparent px-3">
+            <button class="btn btn-primary"><a href="#contact.html" class="btn btn-primary">CONTACT US TODAY</a></button>
+        </div>
+
+        <!-- Bottom border pieces -->
+        <div class="bottom-border-left"></div>
+        <div class="bottom-border-right"></div>
+
+        <!-- Side borders -->
+        <div class="left-border"></div>
+        <div class="right-border"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    </div>
+</body>
+
+</html>
