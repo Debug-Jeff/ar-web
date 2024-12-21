@@ -2,10 +2,6 @@
 @import "bootstrap/scss/bootstrap";
 
 body {
-    background-image: url('/src/assets/pic1.jpeg'); 
-    background-size: cover;   /* Cover the entire area */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent image repetition */
     height: 100vh; /* Full viewport height */
 }
 
@@ -43,6 +39,36 @@ body {
 .button-container .btn a {
     color: white;
     text-decoration: none;
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        color: #007bff;
+
+        &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
 }
 
 @media(min-width: 768px) {
