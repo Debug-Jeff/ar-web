@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novus Reb Engineering Solutions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/NR-Logo-removebg-preview.png" type="image/x-icon">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            background-image: url(assets/bg-image7.jpg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #Container-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .border-wrapper {
+            position: relative;
+            padding: 3rem 2rem;
+        }
+
+        .border-wrapper::before,
+        .border-wrapper::after,
+        .border-wrapper .bottom-border-left,
+        .border-wrapper .bottom-border-right,
+        .border-wrapper .left-border,
+        .border-wrapper .right-border {
+            background-color: rgb(255, 255, 255);
+        }
+
+        .border-wrapper::before,
+        .border-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 2px;
+        }
+
+        .border-wrapper::before {
+            left: 0;
+            width: calc(50% - 50px);
+        }
+
+        .border-wrapper::after {
+            right: 0;
+            width: calc(50% - 50px);
+        }
+
+        .border-wrapper .bottom-border-left,
+        .border-wrapper .bottom-border-right {
+            position: absolute;
+            bottom: 0;
+            height: 2px;
+        }
+
+        .border-wrapper .bottom-border-left {
+            left: 0;
+            width: calc(50% - 25px);
+        }
+
+        .border-wrapper .bottom-border-right {
+            right: 0;
+            width: calc(50% - 25px);
+        }
+
+        .border-wrapper .left-border,
+        .border-wrapper .right-border {
+            position: absolute;
+            width: 4px;
+            height: 100%;
+        }
+
+        .border-wrapper .left-border {
+            top: 0;
+            left: 0;
+        }
+
+        .border-wrapper .right-border {
+            top: 0;
+            right: 0;
+        }
+
+        .logo {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .button-container {
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            z-index: 1;
+        }
+
+        .nav-link {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .nav-link:hover::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-link:hover {
+            color: rgb(9, 48, 244);
+        }
+
+        .nav-link.active {
+            color: rgb(63, 63, 63);
+        }
+
+        .page2 {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 20px;
+            padding: 20px;
+            height: 100vh;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgb(255, 255, 255);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .page2 h1,
+        .page2 p {
+            color: black;
+        }
+
+        .page3,
+        .page4 {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .page3 h1,
+        .page4 h1 {
+            margin-bottom: 40px;
+        }
+
+        .page3 .col-md-4,
+        .page4 .col-md-6 {
+            margin-bottom: 30px;
+        }
+
+        .page3 img,
+        .page4 .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .page4 .card-body {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer .social-links a {
+            margin: 0 10px;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        footer .social-links a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="page1">
+        <!--Nav bar-->
+        <nav class="navbar navbar-expand-lg bg-transparent navbar-dark ">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/logo-removebg-preview.svg" style="width: 50%; margin-left: 20%;" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link text-light fw-bold active" aria-current="page" href="index.html">HOME</a>
+                        <a class="nav-link text-light fw-bold" href="pages/about.html">ABOUT US</a>
+                        <a class="nav-link text-light fw-bold" href="pages/services.html">SERVICES</a>
+                        <a class="nav-link text-light fw-bold" href="pages/projects.html">OUR PROJECTS</a>
+                        <a class="nav-link text-light fw-bold" href="pages/contact.html">CONTACT US</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="Container-div" style="margin-top: calc(50px + 5vh); margin-bottom: 320px;"
+            class="border-wrapper position-relative px-4 container d-flex justify-content-center align-items-center">
+            <!-- Top Logo -->
+            <div class="logo position-absolute bg-transparent px-3">
+                <img src="assets/NR-Logo-removebg-preview.png" alt="Logo" style="height: 50px;">
+            </div>
+
+            <!-- Hero Section -->
+            <h1 class="hero-title px-5 text-center"><span>Novus Reb Engineering Solutions</span></h1>
+            <p class="hero-text px-5 text-center">We're a civil engineering firm that caters to real estate developers
+            </p>
+            <!-- Bottom Button -->
+            <div class="button-container position-absolute bg-transparent px-3">
+                <a href="/src/pages/contact.html" class="btn btn-primary">CONTACT US TODAY</a>
+            </div>
+
+            <!-- Bottom border pieces -->
+            <div class="bottom-border-left"></div>
+            <div class="bottom-border-right"></div>
+
+            <!-- Side borders -->
+            <div class="left-border"></div>
+            <div class="right-border"></div>
+
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+        </div>
+    </section>
+
+    <section class="page2">
+        <div id="Container-div-2"
+            class="position-relative container d-flex flex-column justify-content-center align-items-center gap-4">
+            <div class="row">
+                <div class="content text-center col-12">
+                    <h1>THE WORLD'S MOST RENOWNED CIVIL ENGINEERING FIRM</h1>
+                    <h2>LET'S WORK TOGETHER</h2>
+                    <p>At Novus Reb Engineering Solutions, we pride ourselves on delivering top-notch civil engineering
+                        services that cater to the unique needs of real estate developers. Our team of experienced
+                        professionals is dedicated to providing innovative solutions that ensure the success of your
+                        projects. From initial planning to final execution, we are committed to excellence and customer
+                        satisfaction. Join us in building a better future, one project at a time.</p>
+                    <div class="container position-relative bg-transparent px-3">
+                        <a href="/src/pages/projects.html" class="btn btn-warning">DISCOVER</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page3">
+        <div id="Container-div-3" class="container d-flex flex-column justify-content-center align-items-center text-center">
+            <h1 class="mb-4">OUR TEAM</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="assets/team-member1.jpg" alt="Team Member 1" class="img-fluid rounded-circle mb-3">
+                    <h3>John Doe</h3>
+                    <p>Chief Engineer</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="assets/team-member2.jpg" alt="Team Member 2" class="img-fluid rounded-circle mb-3">
+                    <h3>Jane Smith</h3>
+                    <p>Project Manager</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="assets/team-member3.jpg" alt="Team Member 3" class="img-fluid rounded-circle mb-3">
+                    <h3>Mike Johnson</h3>
+                    <p>Architect</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page4">
+        <div id="Container-div-4" class="container d-flex flex-column justify-content-center align-items-center text-center">
+            <h1 class="mb-4">TESTIMONIALS</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p>"Novus Reb Engineering Solutions exceeded our expectations. Their professionalism and attention to detail were outstanding."</p>
+                            <h5>- Client A</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <p>"We are extremely satisfied with the services provided by Novus Reb. They delivered on time and within budget."</p>
+                            <h5>- Client B</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>Contact us: info@novusreb.com | +123 456 7890</p>
+            <div class="social-links">
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <p>&copy; 2023 Novus Reb Engineering Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+
+</html>
